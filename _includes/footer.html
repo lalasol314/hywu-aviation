@@ -1,0 +1,16 @@
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="logo"><span class="logo-mark">HYWU</span> 항공과</div>
+      <p>{{ site.address }}</p>
+      <p class="muted">이 사이트는 항공과 홍보용 사이트입니다. 공식 학사·입시 정보는 학교 홈페이지를 확인하세요.</p>
+    </div>
+    <div class="footer-links">
+      <a href="{{ site.official_site }}" target="_blank" rel="noopener">학과 공식 홈페이지</a>
+      <a href="{{ site.admission_site }}" target="_blank" rel="noopener">입학처</a>
+      {% if site.instagram != "" %}<a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+      {% if site.youtube != "" %}<a href="{{ site.youtube }}" target="_blank" rel="noopener">YouTube</a>{% endif %}
+    </div>
+  </div>
+  <div class="wrap copy">© Hanyang Women's University · Department of Airline Service</div>
+</footer>
