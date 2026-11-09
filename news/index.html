@@ -1,0 +1,19 @@
+---
+layout: default
+title: 학과소식
+---
+<section class="section wrap">
+  <p class="eyebrow">News</p>
+  <h2>학과소식</h2>
+  <p class="section-lead">특강, 채용설명회, 합격 소식, 학생 활동을 전해요.</p>
+  <div class="grid3">
+    {% for post in site.posts %}
+    <a class="card news" href="{{ post.url | relative_url }}">
+      <span class="tag">{{ post.category | default: "소식" }}</span>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | truncate: 80 }}</p>
+      <span class="muted">{{ post.date | date: "%Y. %m. %d." }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
