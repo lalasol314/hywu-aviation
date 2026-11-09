@@ -1,0 +1,30 @@
+# ==========================================
+# 한양여자대학교 항공과 홍보 사이트 설정
+# ==========================================
+title: "한양여대 항공과"
+description: "Be the Best Crew Members - 서울 도심에서 시작하는 승무원의 꿈, 한양여자대학교 항공과"
+lang: ko
+
+# 저장소 이름이 "아이디.github.io" 이면 baseurl은 "" 그대로 두세요.
+# 다른 이름(예: hywu-aviation)이면 baseurl: "/hywu-aviation" 으로 바꾸세요.
+url: "https://lalasol314.github.io"
+baseurl: "/hywu-aviation"
+
+# 연락처/링크 (필요 시 수정)
+official_site: "https://www.hywoman.ac.kr/airlineservice/index.do"
+admission_site: "https://ipsi.hywoman.ac.kr"
+instagram: ""        # 예: https://instagram.com/hywu_airline
+youtube: ""
+kakao_openchat: ""
+address: "서울특별시 성동구 살곶이길 200 한양여자대학교"
+
+markdown: kramdown
+permalink: /news/:year/:month/:title/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+exclude:
+  - README.md
+  - preview.html
+  - serve.js
+  - start-local.cmd

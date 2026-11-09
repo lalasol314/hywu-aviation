@@ -1,0 +1,123 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="sky"><span class="plane">✈</span><span class="cloud c1"></span><span class="cloud c2"></span><span class="cloud c3"></span></div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Hanyang Women's University · Airline Service</p>
+    <h1>하늘 위의 첫 출근,<br><em>한양여대 항공과</em>에서 시작해요</h1>
+    <p class="lead">서울 도심 왕십리 캠퍼스에서 객실승무원·지상직·공항서비스 전문가로.<br>1978년부터 이어온 전통, 실습 중심 교육으로 꿈을 현실로 만들어요.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#admission">2027 입학안내 보기</a>
+      <a class="btn btn-ghost" href="#curriculum">무엇을 배우나요?</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats wrap">
+  {% for s in site.data.stats %}
+  <div class="stat"><strong>{{ s.num }}</strong><span>{{ s.label }}</span></div>
+  {% endfor %}
+</section>
+
+<section id="about" class="section wrap">
+  <p class="eyebrow">About</p>
+  <h2>Be the Best Crew Members</h2>
+  <p class="section-lead">4차 산업혁명 시대에 맞춘 항공객실서비스 교육으로 지역사회와 상생하는 항공산업 전문 인재를 키웁니다.</p>
+  <div class="grid4">
+    <div class="card"><div class="ic">🧳</div><h3>현장 체험·실습</h3><p>기내 모형 캐빈 실습실, VR 안전훈련실에서 몸으로 익혀요.</p></div>
+    <div class="card"><div class="ic">👩‍🏫</div><h3>전문 교수진</h3><p>항공사 현장 경력 교수진의 1:1 면접·이미지 코칭.</p></div>
+    <div class="card"><div class="ic">🌐</div><h3>폭넓은 진출</h3><p>국내외 항공사 객실·지상직, 공항 VIP 라운지 등.</p></div>
+    <div class="card"><div class="ic">💙</div><h3>높은 만족도</h3><p>재학생 만족도·강의평가 교내 1위 학과.</p></div>
+  </div>
+</section>
+
+<section id="curriculum" class="section alt">
+  <div class="wrap">
+    <p class="eyebrow">Curriculum</p>
+    <h2>2년 동안 이렇게 배워요</h2>
+    <div class="grid3">
+      {% for t in site.data.tracks %}
+      <div class="card track">
+        <div class="ic big">{{ t.icon }}</div>
+        <h3>{{ t.title }}</h3>
+        <p>{{ t.desc }}</p>
+        <p class="subjects">{{ t.subjects }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="career" class="section wrap">
+  <p class="eyebrow">Career & License</p>
+  <h2>졸업하면 어디로 가나요?</h2>
+  <div class="career">
+    <div class="career-box">
+      <h3>진로</h3>
+      <ul class="pill-list">
+        <li>국내 항공사 객실승무원</li><li>외국 항공사 객실승무원</li><li>항공사 지상직</li><li>공항 VIP 라운지</li><li>여행·호스피탈리티</li>
+      </ul>
+    </div>
+    <div class="career-box">
+      <h3>재학 중 취득 가능한 자격증</h3>
+      <ul class="pill-list light">
+        <li>항공예약·발권</li><li>DCS</li><li>SMAT</li><li>CS리더스관리사</li><li>CPR</li><li>와인 소믈리에</li><li>바리스타</li><li>조주기능사</li><li>컴퓨터활용능력</li><li>MOS</li><li>무인동력비행장치</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <p class="eyebrow">News</p>
+    <div class="row-head"><h2>최근 학과소식</h2><a href="{{ '/news/' | relative_url }}">전체보기 →</a></div>
+    <div class="grid3">
+      {% for post in site.posts limit:3 %}
+      <a class="card news" href="{{ post.url | relative_url }}">
+        <span class="tag">{{ post.category | default: "소식" }}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 70 }}</p>
+        <span class="muted">{{ post.date | date: "%Y. %m. %d." }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="faculty" class="section wrap">
+  <p class="eyebrow">Faculty</p>
+  <h2>함께하는 교수진</h2>
+  <div class="grid4 faculty">
+    {% for f in site.data.faculty %}
+    <div class="prof"><div class="avatar">{{ f.name | slice: 0 }}</div><div><strong>{{ f.name }} 교수</strong><p>{{ f.subject }}</p></div></div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="admission" class="section admission">
+  <div class="wrap">
+    <p class="eyebrow light">Admission 2027</p>
+    <h2>2027학년도 수시 일정</h2>
+    <p class="section-lead light">일반전형(면접): 학생부 40% + 면접 60% · 면접·실기 학과 간 복수지원 불가</p>
+    <div class="grid2">
+      {% for r in site.data.schedule %}
+      <div class="sched">
+        <h3>{{ r.round }}</h3>
+        <dl><dt>원서접수</dt><dd>{{ r.apply }}</dd><dt>면접</dt><dd>{{ r.interview }}</dd><dt>합격발표</dt><dd>{{ r.result }}</dd></dl>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="note">※ 일정과 전형은 변경될 수 있으니 반드시 <a href="{{ site.admission_site }}" target="_blank" rel="noopener">입학처 모집요강</a>을 확인하세요.</p>
+  </div>
+</section>
+
+<section id="faq" class="section wrap">
+  <p class="eyebrow">FAQ</p>
+  <h2>자주 묻는 질문</h2>
+  <div class="faq">
+    {% for f in site.data.faq %}
+    <details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>
+    {% endfor %}
+  </div>
+</section>
