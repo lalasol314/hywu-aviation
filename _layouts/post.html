@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<article class="post wrap">
+  <a class="back" href="{{ '/news/' | relative_url }}">← 학과소식</a>
+  <span class="tag">{{ page.category | default: "소식" }}</span>
+  <h1>{{ page.title }}</h1>
+  <p class="muted">{{ page.date | date: "%Y. %m. %d." }}</p>
+  {% if page.image %}<img class="post-cover" src="{{ page.image | relative_url }}" alt="">{% endif %}
+  <div class="post-body">{{ content }}</div>
+</article>
